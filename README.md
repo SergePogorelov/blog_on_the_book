@@ -28,4 +28,4 @@
 - [Django](https://www.djangoproject.com/)
 - [PostgreSQL](https://www.postgresql.org/)
 
-_По книге [Антонио Меле: Django 2 в примерах](https://www.labirint.ru/books/698238/)_
+_По книге [Антонио Меле: Django 2 в примерах](https://dmkpress.com/catalog/computer/programming/python/978-5-97060-746-6/)_
