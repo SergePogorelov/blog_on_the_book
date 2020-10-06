@@ -27,3 +27,5 @@
 - [Python](https://www.python.org/)
 - [Django](https://www.djangoproject.com/)
 - [PostgreSQL](https://www.postgresql.org/)
+
+_По книге [Антонио Меле: Django 2 в примерах](https://www.labirint.ru/books/698238/)_
