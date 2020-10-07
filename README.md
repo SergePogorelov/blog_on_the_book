@@ -14,7 +14,7 @@
 ```
 sudo apt install postgresql postgresql-contrib -y 
 ```
-- От имени пользователя postgres вызовите утилиту psql `sudo -u postgres psql` 
+- От имени пользователя `postgres` вызовите утилиту psql `sudo -u postgres psql` 
 - Создайте базу данных с именем blog `CREATE DATABASE blog;`
 - Создайте пользователя `blog_user` и дайте ему права правления базой данных:
 ```
