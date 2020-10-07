@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import environ
+
+
+env = environ.Env()
+environ.Env.read_env() 
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -86,17 +92,20 @@ WSGI_APPLICATION = 'Blog_on_the_book.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'blog2',
-        'USER': 'blog2',
-        'PASSWORD': 'password',
-        'HOST' : '127.0.0.1',
-        'PORT' : '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql', 
+#         'NAME': 'blog',
+#         'USER': 'blog',
+#         'PASSWORD': 'password',
+#         'HOST' : '127.0.0.1',
+#         'PORT' : '5432',
+#     }
+# }
 
+DATABASES = {
+    'default': env.db(),
+} 
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

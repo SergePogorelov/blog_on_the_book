@@ -5,7 +5,7 @@ from .models import Post
 
 class PostSitemap(Sitemap):
 
-    changefreq = 'weekly'
+    changefreq = "weekly"
     priority = 0.9
 
     def items(self):
@@ -13,3 +13,4 @@ class PostSitemap(Sitemap):
 
     def lastmod(self, obj):
         return obj.update
+        
