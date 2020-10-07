@@ -9,6 +9,21 @@
 ## Установка
 Эти инструкции помогут вам создать копию проекта и запустить ее на локальном компьютере для целей разработки и тестирования.
 
+### Установка PostgreSQL
+- Перед установкой обновите индекс пакетов APT: `sudo apt update` и после этого установите необходимые для работы PostgreSQL пакеты:
+```
+sudo apt install postgresql postgresql-contrib -y 
+```
+- От имени пользователя postgres вызовите утилиту psql `sudo -u postgres psql` 
+- Создайте базу данных с именем blog `CREATE DATABASE blog;`
+- Создайте пользователя `blog_user` и дайте ему права правления базой данных:
+```
+CREATE USER blog_user WITH ENCRYPTED PASSWORD 'password'; 
+GRANT ALL PRIVILEGES ON DATABASE blog TO blog_user;  
+```
+- Чтобы выйти из `psql`, выполните команду `\q`
+- Если вы всё ещё работаете под пользователем `postgres`, выполните команду `exit` 
+
 ### Запуск проекта (на примере Linux)
 
 Перед тем, как начать: если вы не пользуетесь `Python 3`, вам нужно будет установить инструмент `virtualenv` при помощи `pip install virtualenv`. 
@@ -19,6 +34,11 @@
 - Создайте виртуальное окружение `python3 -m venv venv`
 - Активируйте виртуальное окружение `source venv/bin/activate`
 - Установите зависимости `pip install -r requirements.txt`
+- Создайте файл `.env` (в директории с файлом `settings.py`)  командой `touch .env` и добавьте в него настройки подключения к базе данных:
+```
+DATABASE_URL=psql://blog_user:password@127.0.0.1:5432/blog
+# поставьте тот пароль, который вы придумали для пользователя 
+```
 - Накатите миграции `python manage.py migrate`
 - Создайте суперпользователя Django `python manage.py createsuperuser --username admin --email 'admin@example.com'`
 - Запустите сервер разработки Django `python manage.py runserver`
