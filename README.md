@@ -17,6 +17,7 @@
 - Создайте на своем компютере папку проекта blog `mkdir blog` и перейдите в нее `cd blog`
 - Склонируйте этот репозиторий в текущую папку `git clone https://github.com/SergePogorelov/blog_on_the_book.git .`
 - Создайте виртуальное окружение `python3 -m venv venv`
+- Активируйте виртуальное окружение `source venv/bin/activate`
 - Установите зависимости `pip install -r requirements.txt`
 - Накатите миграции `python manage.py migrate`
 - Создайте суперпользователя Django `python manage.py createsuperuser --username admin --email 'admin@example.com'`
